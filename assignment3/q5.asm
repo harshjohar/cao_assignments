@@ -1,16 +1,26 @@
 .data
-    names : 
+    hello: .asciiz "Hello, the string is:\n"
+    employee_name : 
         .align 3
-        .asciiz "charmander"
+        .asciiz "person1"
         .align 3 
-        .asciiz "pikachu"
+        .asciiz "person 2"
         .align 3
-        .asciiz "chikorita"
+        .asciiz "person 3"
         .align 3
-        .asciiz "sceptile"
+        .asciiz "person 4"
         .align 3
-        .asciiz "bulbasuar"
+        .asciiz "person 5"
     
-    id : .space 20
-.text
+    employee_id : .space 20
+.text  
+    #print the first member of the names array
+    la  $a0,employee_name
+    li $v0, 4
+    syscall
+
+    #exit
+    li $v0, 10
+    syscall
+
     
